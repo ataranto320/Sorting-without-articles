@@ -4,14 +4,15 @@ function strip(bandName) {
     return bandName.replace(/^(a |the |an )/i, '').trim(); //regular expression/carrot. look into this. i = incensitive
 }
  
+const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
 
-const sortedBands = bands.sort(function (a, b) {
-    return strip(a) > strip(b) ? 1 : -1;
-    // if (strip(a) > strip(b)) {
-    //     return 1;
-    // } else {
-    //     return -1;
-    // }
-});
+// const sortedBands = bands.sort(function (a, b) {
+//     return strip(a) > strip(b) ? 1 : -1; // one way
+//     // if (strip(a) > strip(b)) { // another way
+//     //     return 1;
+//     // } else {
+//     //     return -1;
+//     // }
+// });
 
 console.log(sortedBands);
