@@ -6,11 +6,12 @@ function strip(bandName) {
  
 
 const sortedBands = bands.sort(function (a, b) {
-    if (a > b) {
-        return 1;
-    } else {
-        return -1;
-    }
+    return strip(a) > strip(b) ? 1 : -1;
+    // if (strip(a) > strip(b)) {
+    //     return 1;
+    // } else {
+    //     return -1;
+    // }
 });
 
 console.log(sortedBands);
